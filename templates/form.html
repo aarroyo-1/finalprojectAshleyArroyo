@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Quick Check Valid</title>
+  </head>
+  <body>
+    <h1>Enter Email and Phone</h1>
+    <form method="post">
+      <label>Email:</label><br>
+      <input name="email" required><br>
+
+      <label>Phone:</label><br>
+      <input name="phone" required><br><br>
+
+      <input type="submit" value="Validate">
+    </form>
+
+    {% if result %}
+      <h2>Results:</h2>
+      <p>Email: {{ '✅ Valid' if result.email_valid else '❌ Invalid' }}</p>
+      <p>Phone: {{ '✅ Valid' if result.phone_valid else '❌ Invalid' }}</p>
+    {% endif %}
+  </body>
+</html>

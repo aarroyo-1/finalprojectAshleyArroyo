@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Email & Phone Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2em;
+            background-color: #f9f9f9;
+        }
+        .form-box {
+            background: white;
+            padding: 2em;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input {
+            display: block;
+            margin-bottom: 1em;
+            width: 100%;
+            padding: 0.5em;
+        }
+        .errors {
+            color: red;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h2>Validate Email and Phone</h2>
+
+        {% if errors %}
+            <div class="errors">
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <form method="post">
+            <label>Email:</label>
+            <input type="text" name="email" value="{{ email or '' }}" required>
+
+            <label>Phone Number:</label>
+            <input type="text" name="phone" value="{{ phone or '' }}" required>
+
+            <button type="submit">Validate</button>
+        </form>
+    </div>
+</body>
+</html>

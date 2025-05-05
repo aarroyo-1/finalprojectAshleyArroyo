@@ -7,11 +7,11 @@
 
 ## Description
 
-This project will use API's Mailboxlayer and Numberify. That will be able to give you the information if a phone is truly valid or made up. Additionally, it will also be able to look up an email and check if it is valid, also!
+This project will use API's Mailboxlayer and Numberify. That will be able to give you the information if a phone is truly valid or made up. Additionally, it will also be able to look up an email and check if it is valid, also! They have only 100 requests only per month free.
 
 ## Getting Started
 
-Would need to copy the pip installation!
+Would need to copy the pip installation! To install the necessary!
 
 ### Dependencies
 

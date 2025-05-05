@@ -29,8 +29,7 @@ python main.py
 
 ## Output
 
-This should create five graphs in charts/ folder for each of the five chosen stocks.
-The five stocks are **Amazon, Ebay, Google, Microsoft, and Spotify**!
+This should **show back results of it the phone and emails are valid or just made up**!
 
 
 ## Author & Contact Information

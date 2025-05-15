@@ -1,57 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Email & Phone Validator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 2em;
-            background-color: #f9f9f9;
+            background-color: #fef6e4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .form-box {
-            background: white;
-            padding: 2em;
-            border-radius: 8px;
-            max-width: 400px;
-            margin: auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        .container {
+            background-color: #fffbea;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #6e4700;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #4a3b00;
         }
         input {
-            display: block;
-            margin-bottom: 1em;
             width: 100%;
-            padding: 0.5em;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #d2b48c;
         }
-        .errors {
-            color: red;
-            margin-bottom: 1em;
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #8b6508;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .results {
+            margin-top: 20px;
+            background-color: #fff3d1;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #d2b48c;
         }
     </style>
 </head>
 <body>
-    <div class="form-box">
-        <h2>Validate Email and Phone</h2>
+    <div class="container">
+        <h1>Email & Phone Validator</h1>
+        <form method="POST">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
 
-        {% if errors %}
-            <div class="errors">
-                <ul>
-                    {% for error in errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-
-        <form method="post">
-            <label>Email:</label>
-            <input type="text" name="email" value="{{ email or '' }}" required>
-
-            <label>Phone Number:</label>
-            <input type="text" name="phone" value="{{ phone or '' }}" required>
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" id="phone" required>
 
             <button type="submit">Validate</button>
         </form>
+
+        {% if results %}
+        <div class="results">
+            <h3>Validation Results:</h3>
+            <p><strong>Email Valid Format:</strong> {{ results.email_valid.is_valid_format.value }}</p>
+            <p><strong>Email Deliverability:</strong> {{ results.email_valid.deliverability }}</p>
+            <p><strong>Phone Valid:</strong> {{ results.phone_valid.valid }}</p>
+            <p><strong>Phone Country:</strong> {{ results.phone_valid.country_name }}</p>
+        </div>
+        {% endif %}
     </div>
 </body>
 </html>

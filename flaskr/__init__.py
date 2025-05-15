@@ -1,39 +1,31 @@
 import os
 import requests
-from flask import Flask, request, render_template, redirect, url_for
-from dotenv import load_dotenv
+from flask import Flask, render_template, request
 
 def create_app():
-    load_dotenv()
-
-    app = Flask(
-        __name__,
-        instance_relative_config=True,
-        template_folder="templates"  # ✅ Corrected this line
-    )
-
-    app.config.from_mapping(SECRET_KEY='dev')
-
-    @app.route('/')
-    def index():
-        return redirect(url_for('validate'))
+    app = Flask(__name__)
 
     @app.route('/validate', methods=['GET', 'POST'])
     def validate():
+        results = None
+
         if request.method == 'POST':
             email = request.form.get('email')
             phone = request.form.get('phone')
 
-            errors = []
+            email_api_key = os.getenv("EMAIL_API_KEY")
+            phone_api_key = os.getenv("PHONE_API_KEY")
 
-            if not email or '@' not in email:
-                errors.append("Invalid email address.")
+            email_response = requests.get(
+                f"https://emailvalidation.abstractapi.com/v1/?api_key={email_api_key}&email={email}")
+            phone_response = requests.get(
+                f"http://apilayer.net/api/validate?access_key={phone_api_key}&number={phone}&country_code=US&format=1")
 
-            if not phone or not phone.isdigit() or len(phone) != 10:
-                errors.append("Invalid phone number. Must be 10 digits.")
+            results = {
+                'email_valid': email_response.json(),
+                'phone_valid': phone_response.json()
+            }
 
-            return render_template('form.html', email=email, phone=phone, errors=errors)
-
-        return render_template('form.html')
+        return render_template('form.html', results=results)
 
     return app

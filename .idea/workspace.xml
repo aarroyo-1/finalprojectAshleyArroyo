@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73e7575e-aef4-4ef8-bf7b-4468b6cfd6e5" name="Changes" comment="README file">
-      <change afterPath="$PROJECT_DIR$/flaskr/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskr/templates/form.html" afterDir="false" />
+    <list default="true" id="73e7575e-aef4-4ef8-bf7b-4468b6cfd6e5" name="Changes" comment="Fixed the files need to do form and work on actually showing results!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskr/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskr/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/templates/form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starta.py" beforeDir="false" afterPath="$PROJECT_DIR$/starta.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +115,7 @@
       <workItem from="1746405132815" duration="228000" />
       <workItem from="1746405450773" duration="4606000" />
       <workItem from="1746414783573" duration="1647000" />
-      <workItem from="1746416830228" duration="2747000" />
+      <workItem from="1746416830228" duration="6332000" />
     </task>
     <task id="LOCAL-00001" summary="Added README Working on using HTML to make simple website with a mix of flaskr">
       <option name="closed" value="true" />
@@ -150,31 +149,40 @@
       <option name="project" value="LOCAL" />
       <updated>1746415151418</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed the files need to do form and work on actually showing results!">
+      <option name="closed" value="true" />
+      <created>1746421152275</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746421152275</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added README Working on using HTML to make simple website with a mix of flaskr" />
     <MESSAGE value="Modified and took off .idea" />
     <MESSAGE value="Worked on form not working need to find out a way to post the results and modified README" />
     <MESSAGE value="README file" />
-    <option name="LAST_COMMIT_MESSAGE" value="README file" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/starta.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fixed the files need to do form and work on actually showing results!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the files need to do form and work on actually showing results!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/finalprojectAshleyArroyo$starta.coverage" NAME="starta Coverage Results" MODIFIED="1746411311748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/finalprojectAshleyArroyo$starta.coverage" NAME="starta Coverage Results" MODIFIED="1746421898962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
